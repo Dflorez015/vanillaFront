@@ -1,7 +1,12 @@
-import React from 'react'
+import { RootContainer } from '../../styles'
+import { MainWheaterInfo } from './widgets/main/Index'
+import { Menu } from './widgets/menu/Index'
 
 export const HomePage = () => {
-  return (
-    <div>By: Duvna Florez, git: Dflorez015</div>
-  )
+    return (
+        <RootContainer>
+            <Menu />
+            <MainWheaterInfo />
+        </RootContainer>
+    )
 }
