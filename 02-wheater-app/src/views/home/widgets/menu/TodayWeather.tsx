@@ -1,16 +1,18 @@
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../../context";
-import { set_option_menu } from "../../../../context/country/country.actions";
+import { set_geo_location, set_option_menu } from "../../../../context/country/country.actions";
 import { StyleButtom, StyleRowSpace } from "../../../../styles"
-import { getMyPosition } from "../../../../utils/functions/geoLocation";
 import { StyleMenuInfoWheaterContent, StyleUbicationBtn } from "../home.style"
 
 export const TodayWeather = () => {
+  // hooks
   const dispatch = useDispatch<AppDispatch>();
+  // functions
   const close_option = () => dispatch(set_option_menu())
   const set_my_position = () => {
-    dispatch(getMyPosition())
+    dispatch(set_geo_location())
   }
+  
   return (
     <StyleMenuInfoWheaterContent>
       <StyleRowSpace>

@@ -1,6 +1,6 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { CityListFilter, SearchButtom } from '../../../../components'
-import { AppDispatch } from '../../../../context'
+import { AppDispatch, stateCountry } from '../../../../context'
 import { set_option_menu } from '../../../../context/country/country.actions'
 import { StyleInputSearch, StyleRowSpace } from '../../../../styles'
 import { StyleCloseBtnMenu, StyleMenuSearchContent } from '../home.style'
@@ -8,6 +8,7 @@ import { StyleCloseBtnMenu, StyleMenuSearchContent } from '../home.style'
 export const FilterCity = () => {
 
     const dispatch = useDispatch<AppDispatch>();
+    const { list_country_loading } = useSelector(stateCountry)
 
     const close_option = () => dispatch(set_option_menu())
 
@@ -18,11 +19,9 @@ export const FilterCity = () => {
                 <StyleInputSearch type="text" />
                 <SearchButtom />
             </StyleRowSpace>
-            <CityListFilter>
+            <CityListFilter loading={true}>
                 <>
-                    <li>adas</li>
-                    <li>adas</li>
-                    <li>adas</li>
+
                 </>
             </CityListFilter>
         </StyleMenuSearchContent>
